@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VALO BLAST</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-512.png">
+    <meta name="theme-color" content="#ff4655">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-wrapper">
+        <div class="header">
+            <div class="logo">VALO <span class="highlight">BLAST</span></div>
+            <button id="settings-btn" onclick="toggleSettings()">⚙️</button>
+        </div>
+
+        <div class="score-board">
+            <div class="score-card">
+                <p>SKOR</p>
+                <h2 id="score">0</h2>
+            </div>
+            <div class="score-card best">
+                <p>EN İYİ</p>
+                <h2 id="best-score">0</h2>
+            </div>
+        </div>
+        
+        <div id="grid-container">
+            <div id="grid"></div> 
+        </div>
+
+        <div class="player-message">Layrox Başarılar Diler ///</div>
+        
+        <div id="pieces-container"></div>
+
+        <div id="settings-panel" class="modal">
+            <h3 class="valo-title">AYARLAR</h3>
+            <div class="control-group">
+                <label>MÜZİK</label>
+                <input type="range" id="music-vol" min="0" max="1" step="0.01" value="0.01" oninput="updateMusicVolume()">
+            </div>
+            <div class="control-group">
+                <label>SFX</label>
+                <input type="range" id="sfx-vol" min="0" max="1" step="0.01" value="0.70">
+            </div>
+            <button class="btn-valo" onclick="toggleSettings()">KAPAT</button>
+            <div class="footer-credit">CREATED BY LAYROX</div>
+        </div>
+
+        <div id="game-over" class="modal">
+            <h2 class="valo-title" style="color: #ff4655;">ELENDİN</h2>
+            <div class="final-box">
+                <p>SKORUN</p>
+                <h1 id="final-score">0</h1>
+            </div>
+            <button class="btn-valo" onclick="resetGame()">TEKRAR DENE</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
